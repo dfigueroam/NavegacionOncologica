@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
+import logoImg from '../assets/logo.jpg'
 
 export default function Login({ onLogin }) {
   const [showPassword, setShowPassword] = useState(false)
@@ -12,7 +13,7 @@ export default function Login({ onLogin }) {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center bg-white rounded-2xl p-4 mb-4 shadow-lg">
-            <img src="/logo.jpg" alt="Clínica Alemana de Osorno" className="h-16 w-auto" />
+            <img src={logoImg} alt="Clínica Alemana de Osorno" className="h-16 w-auto" />
           </div>
           <h1 className="text-2xl font-bold text-white">Navegación Oncológica</h1>
           <p className="text-primary-200 text-sm mt-1">Sistema de Trazabilidad Clínica</p>

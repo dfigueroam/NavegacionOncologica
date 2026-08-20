@@ -6,6 +6,7 @@ import {
   User, Menu, X, Database, AlertTriangle, ListChecks, Stethoscope
 } from 'lucide-react'
 import { currentUser } from '../data/mockData'
+import logoImg from '../assets/logo.jpg'
 
 const navigation = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
@@ -40,7 +41,7 @@ export default function Layout({ children, onLogout }) {
           {sidebarOpen && (
             <div className="flex items-center gap-2">
               <div className="bg-white rounded-lg p-1.5 flex items-center justify-center">
-                <img src="/logo.jpg" alt="Clínica Alemana de Osorno" className="h-7 w-auto" />
+                <img src={logoImg} alt="Clínica Alemana de Osorno" className="h-7 w-auto" />
               </div>
               <div>
                 <h1 className="text-sm font-bold leading-tight">Navegación</h1>
@@ -50,7 +51,7 @@ export default function Layout({ children, onLogout }) {
           )}
           {!sidebarOpen && (
             <div className="bg-white rounded-lg p-1 flex items-center justify-center mx-auto">
-              <img src="/logo.jpg" alt="Logo" className="h-6 w-auto" />
+              <img src={logoImg} alt="Logo" className="h-6 w-auto" />
             </div>
           )}
           <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-1.5 rounded-lg hover:bg-primary-800 transition-colors">
