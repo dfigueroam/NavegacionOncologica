@@ -8,7 +8,7 @@ export default function Login({ onLogin }) {
   const [password, setPassword] = useState('••••••••')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary-900 via-teal-800 to-primary-900 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
@@ -68,7 +68,7 @@ export default function Login({ onLogin }) {
         </div>
 
         <p className="text-xs text-primary-300 text-center mt-6">
-          © 2024 Clínica — Navegación Oncológica v1.0
+          © 2026 — Navegación Oncológica v1.0 [Mockup]
         </p>
       </div>
     </div>
