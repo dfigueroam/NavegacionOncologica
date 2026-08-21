@@ -12,7 +12,13 @@ export default function PatientSearch() {
     setSearched(true)
     // Simulate finding a patient
     if (searchTerm) {
-      const found = cases.find(c => c.rut.includes(searchTerm) || c.patient.toLowerCase().includes(searchTerm.toLowerCase()))
+      const normalize = (str) => str.replace(/\./g, '').toLowerCase()
+      const normalizedSearch = normalize(searchTerm)
+      const found = cases.find(c => 
+        normalize(c.rut).includes(normalizedSearch) || 
+        c.rut.includes(searchTerm) ||
+        c.patient.toLowerCase().includes(searchTerm.toLowerCase())
+      )
       if (found) {
         setFoundPatient(found)
       } else {

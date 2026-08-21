@@ -9,8 +9,9 @@ export default function CasesList() {
   const [filterAlert, setFilterAlert] = useState('all')
 
   const filtered = cases.filter(c => {
+    const normalize = (str) => str.replace(/\./g, '').toLowerCase()
     const matchSearch = c.patient.toLowerCase().includes(search.toLowerCase()) || 
-                        c.rut.includes(search) || 
+                        normalize(c.rut).includes(normalize(search)) || 
                         c.id.toLowerCase().includes(search.toLowerCase())
     const matchState = filterState === 'all' || c.state === filterState
     const matchAlert = filterAlert === 'all' || c.alertLevel === filterAlert
