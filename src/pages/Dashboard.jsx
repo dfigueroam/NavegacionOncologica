@@ -24,62 +24,62 @@ export default function Dashboard() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="card border-l-4 border-l-red-500">
+        <div className="card border-l-4 border-l-gray-300">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-500">Alertas Vencidas</p>
-              <p className="text-3xl font-bold text-red-600 mt-1">{expiredAlerts.length}</p>
+              <p className="text-3xl font-bold text-gray-800 mt-1">{expiredAlerts.length}</p>
             </div>
             <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center">
-              <AlertTriangle className="w-6 h-6 text-red-500" />
+              <AlertTriangle className="w-6 h-6 text-red-400" />
             </div>
           </div>
-          <Link to="/alert-management" className="text-xs text-red-600 hover:text-red-700 mt-3 inline-flex items-center gap-1">
+          <Link to="/alert-management" className="text-xs text-gray-500 hover:text-primary-700 mt-3 inline-flex items-center gap-1">
             Ver alertas <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
 
-        <div className="card border-l-4 border-l-amber-500">
+        <div className="card border-l-4 border-l-gray-300">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-500">Alertas Por Vencer</p>
-              <p className="text-3xl font-bold text-amber-600 mt-1">{aboutToExpireAlerts.length}</p>
+              <p className="text-3xl font-bold text-gray-800 mt-1">{aboutToExpireAlerts.length}</p>
             </div>
             <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center">
-              <Clock className="w-6 h-6 text-amber-500" />
+              <Clock className="w-6 h-6 text-amber-400" />
             </div>
           </div>
-          <Link to="/alert-management" className="text-xs text-amber-600 hover:text-amber-700 mt-3 inline-flex items-center gap-1">
+          <Link to="/alert-management" className="text-xs text-gray-500 hover:text-primary-700 mt-3 inline-flex items-center gap-1">
             Ver alertas <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
 
-        <div className="card border-l-4 border-l-blue-500">
+        <div className="card border-l-4 border-l-gray-300">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-500">Casos Activos</p>
-              <p className="text-3xl font-bold text-blue-600 mt-1">{activeCases.length}</p>
+              <p className="text-3xl font-bold text-gray-800 mt-1">{activeCases.length}</p>
             </div>
-            <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-              <FileText className="w-6 h-6 text-blue-500" />
+            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
+              <FileText className="w-6 h-6 text-gray-400" />
             </div>
           </div>
-          <Link to="/cases" className="text-xs text-blue-600 hover:text-blue-700 mt-3 inline-flex items-center gap-1">
+          <Link to="/cases" className="text-xs text-gray-500 hover:text-primary-700 mt-3 inline-flex items-center gap-1">
             Ver casos <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
 
-        <div className="card border-l-4 border-l-purple-500">
+        <div className="card border-l-4 border-l-gray-300">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-500">Pendientes Asignación</p>
-              <p className="text-3xl font-bold text-purple-600 mt-1">{pendingQueue.length}</p>
+              <p className="text-3xl font-bold text-gray-800 mt-1">{pendingQueue.length}</p>
             </div>
-            <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center">
-              <ClipboardList className="w-6 h-6 text-purple-500" />
+            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
+              <ClipboardList className="w-6 h-6 text-gray-400" />
             </div>
           </div>
-          <Link to="/assignment-queue" className="text-xs text-purple-600 hover:text-purple-700 mt-3 inline-flex items-center gap-1">
+          <Link to="/assignment-queue" className="text-xs text-gray-500 hover:text-primary-700 mt-3 inline-flex items-center gap-1">
             Ver cola <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
@@ -158,13 +158,13 @@ export default function Dashboard() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
           {[
-            { name: 'Sospecha', count: cases.filter(c => c.state === 'EST-01').length, color: 'bg-yellow-100 text-yellow-800' },
-            { name: 'Diagnóstico', count: cases.filter(c => c.state === 'EST-02').length, color: 'bg-orange-100 text-orange-800' },
-            { name: 'Etapificación', count: cases.filter(c => c.state === 'EST-03').length, color: 'bg-blue-100 text-blue-800' },
-            { name: 'Plan atención', count: cases.filter(c => c.state === 'EST-04').length, color: 'bg-indigo-100 text-indigo-800' },
-            { name: 'Tratamiento', count: cases.filter(c => c.state === 'EST-05').length, color: 'bg-purple-100 text-purple-800' },
-            { name: 'Seguimiento', count: cases.filter(c => c.state === 'EST-06').length, color: 'bg-green-100 text-green-800' },
-            { name: 'Cerrados', count: cases.filter(c => ['EST-09', 'EST-10', 'EST-12'].includes(c.state)).length, color: 'bg-gray-100 text-gray-800' },
+            { name: 'Sospecha', count: cases.filter(c => c.state === 'EST-01').length, color: 'bg-gray-100 text-gray-700' },
+            { name: 'Diagnóstico', count: cases.filter(c => c.state === 'EST-02').length, color: 'bg-gray-100 text-gray-700' },
+            { name: 'Etapificación', count: cases.filter(c => c.state === 'EST-03').length, color: 'bg-gray-100 text-gray-700' },
+            { name: 'Plan atención', count: cases.filter(c => c.state === 'EST-04').length, color: 'bg-gray-100 text-gray-700' },
+            { name: 'Tratamiento', count: cases.filter(c => c.state === 'EST-05').length, color: 'bg-primary-50 text-primary-800' },
+            { name: 'Seguimiento', count: cases.filter(c => c.state === 'EST-06').length, color: 'bg-primary-50 text-primary-800' },
+            { name: 'Cerrados', count: cases.filter(c => ['EST-09', 'EST-10', 'EST-12'].includes(c.state)).length, color: 'bg-gray-50 text-gray-500' },
           ].map((item) => (
             <div key={item.name} className={`${item.color} rounded-xl p-4 text-center`}>
               <p className="text-2xl font-bold">{item.count}</p>
